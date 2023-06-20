@@ -21,6 +21,7 @@ for(i = 0; i<= 10; i++)
 //});
 
 
-while(false){
-    console.log("hi");
-}   
+//while(false){
+//    console.log("hi");
+//      
+//}   
