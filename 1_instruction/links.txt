@@ -1,2 +1,0 @@
-download: git-scm
-download: vsc

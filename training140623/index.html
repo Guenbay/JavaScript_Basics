@@ -14,6 +14,7 @@
       <option value="vw">VW</option>
       <option value="mercedes">Mercedes</option>
       <option value="opel">Opel</option>
+      <option value="hyundai">Hyundai</option>
     </select>
 
     <br><br>
@@ -40,48 +41,108 @@
       modellSelect.innerHTML = "<option value=''>Bitte auswählen</option>";
 
       if (autotyp === "vw") {
-        var vwModelle = ["Golf", "Passat"];
+        var vwModelle = ["Golf", "Passat", "Polo", "GTI"];
         addOptionsToSelect(vwModelle, modellSelect);
       } else if (autotyp === "mercedes") {
-        var mercedesModelle = ["SLK", "CLK"];
+        var mercedesModelle = ["AMG","C200","C300","E300","S220","SLK","CLK",];
         addOptionsToSelect(mercedesModelle, modellSelect);
       } else if (autotyp === "opel") {
-        var opelModelle = ["Manta", "Vectra"];
+        var opelModelle = ["Astra","Crossland","Corsa","Manta","Omega","Vectra"];
         addOptionsToSelect(opelModelle, modellSelect);
-      }
+      } else if (autotyp === "hyundai") {
+        var hyundaiModelle = ["i10","i20", "i30","i20N","i30N"];
+        addOptionsToSelect(hyundaiModelle, modellSelect);
+      } //else if (autotyp === "Honda") {
+     //   var hondaModelle = ["Civic", "Civic Type R","CR-V"];
+     //   addOptionsToSelect(hondaModelle, modellSelect);
+     // } else if (autotyp === "BMW") {
+     //   var bmwModelle = ["180i", "220i", "225i", "230i", "235i", "330i", "420i","525i", "530i", "580i",
+     //                    "620i", "630i", "650i", "750i", "760i", "830i", "850i", "860i","M1","M2","M3","M4","M5","M6","M7","M8"
+     //                   "X-Drive","X-Drive e","i20","i30"];
+     //   addOptionsToSelect(bmwModelle, modellSelect);
+     //  } else if (autotyp === "KIA") {
+     //   var kiaModelle = ["Proceed", "Sportage", "Stonic", "Rio"];
+     //   addOptionsToSelect(kiaModelle, modellSelect);
+     //  }
     }
 
-    function updateTuningTeileOptions() {
+    function updateTuningTeileOptions() 
+    {
       var autotyp = document.getElementById("autotyp").value;
       var modell = document.getElementById("modell").value;
       var tuningteileSelect = document.getElementById("tuningteile");
 
       // Leere das Tuningteile-Dropdown, bevor neue Optionen hinzugefügt werden
       tuningteileSelect.innerHTML = "<option value=''>Bitte auswählen</option>";
-
+      
+      //VW "Golf", "Passat", "Polo", "GTI"
       if (autotyp === "vw" && modell === "Golf") {
         var vwGolfTuningteile = ["VW Golf Motor", "VW Golf Auspuff"];
         addOptionsToSelect(vwGolfTuningteile, tuningteileSelect);
       } else if (autotyp === "vw" && modell === "Passat") {
         var vwPassatTuningteile = ["VW Passat Motor", "VW Passat Auspuff"];
         addOptionsToSelect(vwPassatTuningteile, tuningteileSelect);
+      } else if (autotyp === "vw" && modell === "Polo") {
+        var vwPoloTuningteile = ["VW Polo Lenkrad", "VW Polo Radio", "VW Polo Auspuff"];
+        addOptionsToSelect(vwPoloTuningteile, tuningteileSelect);
+      } else if (autotyp === "vw" && modell === "GTI") {
+        var vwGtiTuningteile = ["VW Golf GTI Bremsen", "VW Golf GTI Auspuff"];
+        addOptionsToSelect(vwGtiTuningteile, tuningteileSelect);
+
+    //Mercedes "AMG","C200","C300","E300","S220","SLK","CLK"
       } else if (autotyp === "mercedes" && modell === "SLK") {
         var mercedesSlkTuningteile = ["Mercedes SLK Motor", "Mercedes SLK Auspuff"];
         addOptionsToSelect(mercedesSlkTuningteile, tuningteileSelect);
       } else if (autotyp === "mercedes" && modell === "CLK") {
         var mercedesClkTuningteile = ["Mercedes CLK Motor", "Mercedes CLK Auspuff"];
         addOptionsToSelect(mercedesClkTuningteile, tuningteileSelect);
+      } else if (autotyp === "mercedes" && modell === "AMG") {
+        var mercedesAmgTuningteile = ["Motor", "Bremsen", "Felgen", "Auspuff", "Soundanlage"];
+        addOptionsToSelect(mercedesAmgTuningteile, tuningteileSelect);
+
+    //Opel "Astra","Crossland","Corsa","Manta","Omega","Vectra"
       } else if (autotyp === "opel" && modell === "Manta") {
         var opelMantaTuningteile = ["Opel Manta Motor", "Opel Manta Auspuff"];
         addOptionsToSelect(opelMantaTuningteile, tuningteileSelect);
       } else if (autotyp === "opel" && modell === "Vectra") {
         var opelVectraTuningteile = ["Opel Vectra Motor", "Opel Vectra Auspuff"];
         addOptionsToSelect(opelVectraTuningteile, tuningteileSelect);
-      }
+      } else if (autotyp === "opel" && modell === "Astra") {
+        var opelAstraTuningteile = ["Opel Astra Bremsen", "Opel Astra Auspuff", "Opel Astra Lenkrad"];
+        addOptionsToSelect(opelAstraTuningteile, tuningteileSelect);
+      } else if (autotyp === "opel" && modell === "Omega") {
+        var opelOmegaTuningteile = ["Opel Omega Bremsen", "Opel Omega Auspuff", "Opel Omega Lenkrad"];
+        addOptionsToSelect(opelOmegaTuningteile, tuningteileSelect);
+      } else if (autotyp === "opel" && modell === "Corsa") {
+        var opelCorsaTuningteile = ["Opel Corsa Bremsen", "Opel Corsa Auspuff", "Opel Corsa Lenkrad"];
+        addOptionsToSelect(opelCorsaTuningteile, tuningteileSelect);
+      } else if (autotyp === "opel" && modell === "Crossland") {
+        var opelCrosslandTuningteile = ["Opel Crossland Bremsen", "Opel Crossland Auspuff", "Opel Crossland Lenkrad"];
+        addOptionsToSelect(opelCrosslandTuningteile, tuningteileSelect);
+      
+      //Hyundai "i10","i20", "i30","i20N","i30N"
+      }  else if (autotyp === "hyundai" && modell === "i10") {
+        var hyundaiI10Tuningteile = ["Motor", "Auspuff"];
+        addOptionsToSelect(hyundaiI10Tuningteile, tuningteileSelect);
+      } else if (autotyp === "hyundai" && modell === "i20") {
+        var hyundaiI20Tuningteile = ["Motor", " Auspuff", "Bremsen"];
+        addOptionsToSelect(hyundaiI20Tuningteile, tuningteileSelect);
+      } else if (autotyp === "hyundai" && modell === "i30") {
+        var hyundaiI30Tuningteile = ["Bremsen", "Auspuff", "Lenkrad", "Dom Strebe"];
+        addOptionsToSelect(hyundaiI30Tuningteile, tuningteileSelect);
+      } else if (autotyp === "hyundai" && modell === "i20N") {
+        var hyundaiI20nTuningteile = ["Bremsen", "Auspuff", "Lenkrad", "Dom Strebe"];
+        addOptionsToSelect(hyundaiI20nTuningteile, tuningteileSelect);
+      } else if (autotyp === "hyundai" && modell === "i30N") {
+        var hyundaiI30nTuningteile = ["Bremsen", "Auspuff", "Lenkrad", "Dom Strebe"];
+        addOptionsToSelect(hyundaiI30nTuningteile, tuningteileSelect);
+      } 
     }
 
-    function addOptionsToSelect(optionsArray, selectElement) {
-      for (var i = 0; i < optionsArray.length; i++) {
+    function addOptionsToSelect(optionsArray, selectElement) 
+    {
+      for (var i = 0; i < optionsArray.length; i++) 
+      {
         var option = document.createElement("option");
         option.text = optionsArray[i];
         selectElement.add(option);
