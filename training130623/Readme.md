@@ -1,1 +1,1 @@
-Verschiedene jason scripte zur Einbindung in HTML.
+Verschiedene json scripte zur Einbindung in HTML.
